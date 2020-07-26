@@ -47,7 +47,8 @@ func select_prev_char():
 func start_follow():
 	for i in range(0, party.size()):
 		var character = party[i]
-		character.follow(curr_char, i)
+		character.stop_follow()
+		character.start_follow(curr_char, i + 1, party.size())
 
 func activate_char():
 	curr_char.select()
